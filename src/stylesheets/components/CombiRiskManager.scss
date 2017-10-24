@@ -1,0 +1,469 @@
+$error: #ff7a7a;
+
+#combi-risk-manager{
+  .page-main {
+    .form-inner .top-panel {
+      .top-panel-section {
+        display: flex;
+      }
+      .form-wrapper {
+        padding: 0px;
+        flex: 1;
+      }
+      .singular-wrapper {
+        min-height: 25px;
+        padding: 5px 0px;
+        > div {
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .ReactVirtualized__Table {
+    .ReactVirtualized__Grid__innerScrollContainer {
+      font-weight: 200;
+    }
+  }
+
+  //icons/status
+  .phxico {
+    &[data-blockStatus="NONE"] {
+      color: $green
+    }
+    &[data-blockStatus="MANUAL"] {
+      color: $red
+    }
+    &[data-blockStatus=""] {
+      color: $gray
+    }
+  }
+
+  .ReactVirtualized__Table__Grid {
+    .no-combi-found {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+  .blockingrules-section {
+    width: 100%;
+    height: 47px;
+    .channels {
+      width: calc(100% - 250px);
+      float: left;
+      height: 100%;
+      .channel {
+        min-width: 80px;
+        height: 100%;
+        border-right: 1px solid $black10;
+        padding: 3px 5px;
+        float: left;
+        &:last-child() {
+          border-right: 0px;
+        }
+        i {
+          margin-right: 5px;
+          font-size: 12px;
+          color: $primary;
+          float: left;
+        }
+        label {
+          color: $primary;
+          float: left;
+          margin: 0px
+        }
+        .channel-rule {
+          text-transform: uppercase;
+          font-size: 10px;
+          padding: 3px 7px;
+          width: 60px;
+          color: $white;
+          background-color: $gray;
+          display: block;
+          margin: 17px auto 0px auto;
+          border-radius: 3px;
+          text-align: center;
+          &[data-rule="SPECIFIC"] {
+            background-color: $secondary-dark;
+          }
+          &[data-rule="ANY"] {
+            background-color: $purple;
+          }
+        }
+      }
+    }
+    button {
+      float: right;
+      margin-right: 20px;
+    }
+  }
+}
+
+//modals
+.large {
+  &.tall {
+    .modal-container {
+      height: 710px;
+    }
+  }
+}
+.ReactModal__Content {
+  &[aria-label="Set New Blocking Rule"] {
+    .modal-container {
+      height: 340px;
+      .modal-body .form-inner > .form-wrapper {
+        padding: 0px 10px;
+        height: 259px;
+        p {
+          margin: 10px 0px 5px 0px;
+        }
+        .form-wrapper h4 {
+          background: $primary-light;
+        }
+      }
+    }
+    .combinationBet-tableOnly {
+      max-height: 100px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      .ReactVirtualized__Grid__innerScrollContainer {
+        font-weight: 200;
+      }
+    }
+    .blocktype-inner {
+      .blocktype-item {
+        display: block;
+        margin-bottom: 2px;
+        input[type="radio"] {
+          margin-right: 10px;
+        }
+      }
+    }
+    .blocktype-channels {
+      padding: 2px 10px;
+      .channel {
+        width: 25%;
+        float: left;
+        line-height: 20px;
+        input[type="checkbox"] {
+          margin-right: 5px;
+        }
+      }
+    }
+    .button-group {
+      display: block;
+      padding: 10px 20px;
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+    }
+    .button-group-merged {
+      button {
+        border-radius: 0px;
+      }
+      button:first-child {
+        border-radius: 3px 0px 0px 3px;
+      }
+      button:last-child {
+        border-radius: 0px 3px 3px 0px;
+      }
+    }
+  }
+}
+
+$border-color: #E0E0E0;
+$header-bg-color: #E9E9E9;
+
+@mixin VirtualColumn {
+  .ReactVirtualized__Table__rowColumn,
+  .ReactVirtualized__Table__headerColumn {
+    height: 20px;
+    line-height: 20px;
+    border-right: 1px solid  $border-color;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      border-left: 1px solid $border-color;
+      margin-left: 0;
+      padding-left: 10px;
+    }
+  }
+}
+
+// .ReactVirtualized__Table {
+//     margin: 10px;
+// }
+.ReactVirtualized__Table__headerRow {
+  border-bottom: 1px solid $border-color;
+  background: $header-bg-color;
+  text-transform: none !important;
+
+  &:first-child {
+    border-top: 1px solid $border-color;
+  }
+
+  @include VirtualColumn;
+
+  .ReactVirtualized__Table__rowColumn,
+  .ReactVirtualized__Table__headerColumn, {
+    outline: none;
+  }
+
+  .ReactVirtualized__Table__headerColumn {
+    margin-right: 0;
+    padding: 0 5px;
+  }
+
+}
+
+.ReactVirtualized__Table__row {
+  @include VirtualColumn;
+  cursor: pointer;
+  outline: none;
+
+  &:not(:first-child) {
+    border-top: 1px solid $border-color;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &.row-selected {
+    background: $primary-light !important;
+    color: $white;
+    outline: none;
+
+    .ReactVirtualized__Table__rowColumn {
+      input, select {
+        background: transparent;
+        color: $white;
+      }
+
+      select {
+        &:active, &:focus {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.ReactVirtualized__Table__sortableHeaderIcon {
+  height: 1.5em !important;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.rv-custom-row {
+  border-bottom: 1px solid $border-color;
+
+  .ReactVirtualized__Table__rowColumn {
+    margin: 0;
+    padding: 0 5px;
+
+    select, input {
+      width: 100%;
+      height: 15px;
+      border: none;
+
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+
+    input {
+      text-align: right;
+
+      &:focus, &:active {
+        // text-align: left;
+        border: 1px;
+        background: #FFFFFF;
+        color: #000;
+      }
+    }
+  }
+}
+
+div[aria-label="grid"] {
+  &:focus {
+    outline: none;
+  }
+}
+
+.filter-wrapper {
+  margin: 5px;
+  display: flex;
+
+  .filter-container {
+    margin: 0 5px;
+
+    .filter-wrap {
+      background: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      min-height: 255px;
+
+      .filter-item {
+        display: flex;
+        margin-bottom: 5px;
+
+        > label {
+          text-align: right;
+          display: block;
+          flex: 1;
+        }
+
+        .filter-input {
+          position: relative;
+          display: flex;
+          flex: 1;
+
+          .spacer {
+            width: 10px;
+            text-align: center;
+          }
+
+          .datepicker-container {
+            position: relative;
+
+            .error {
+              position: absolute;
+              right: 5px;
+              top: 4px;
+              color: $error;
+              font-size: 11px;
+            }
+
+            .datepicker-inner {
+              position: relative;
+              z-index: 99;
+            }
+
+            p {
+              flex: 1;
+              margin: 0;
+            }
+
+            input[type="text"] {
+              width: 100%;
+              z-index: -1;
+            }
+          }
+
+          input[type="text"] {
+            flex: 1;
+
+            &.hasError {
+              border-color: $error;
+            }
+          }
+
+          .option {
+            display: flex;
+            flex-flow: row wrap;
+
+            label {
+              display: flex;
+              text-align: left;
+              margin: 5px 10px 0 0;
+            }
+          }
+        }
+      }
+
+      ul {
+      	width:100%;
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  .flex-#{$i} {
+    flex: #{$i};
+  }
+}
+
+@for $i from 1 through 9 {
+  .flex1-#{$i} {
+    flex: #{1 + ($i/10)} !important;
+  }
+}
+
+.specific-sports, .event-paths-filter {
+	width:100%;
+	min-height: 200px;
+	max-height: 250px;
+	border:1px solid #aaa;
+	padding:5px;
+	margin-top:5px;
+	overflow:scroll;
+	input {
+		margin-right:0 !important;
+	}
+	label {
+		user-select:none;
+		cursor:pointer;
+		&.disabled {
+			color:#999;
+			.path-icon {
+				color:#999;
+			}
+		}
+		&.no-child {
+			margin-left:17px;
+		}
+
+		overflow:hidden;
+	}
+	.path-icon {
+		color:#333;
+		display:inline-block;
+		margin-right: 0;
+    	width: auto;
+	}
+	.phx-event-path, .phx-rank-event, .phx-game-event {
+		color :#fff;
+		font-size:13px;
+	}
+}
+
+
+.epf-container{
+  width:100%;
+  display:flex;
+  align-items:center;
+  .event-paths-filter {
+    height:250px;
+    .ep-toggle {
+      i {
+        cursor : pointer;
+      }
+    }
+  }
+}
+
+.epf-action-buttons {
+	// width:80px;
+	display:flex;
+	align-items:center;
+	vertical-align:middle;
+	margin: 0 10px;
+    flex: 0 0 auto;
+    flex-direction: column;
+	button {
+		margin-bottom: 5px;
+		padding: 5px 10px;
+	}
+}
