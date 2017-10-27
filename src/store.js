@@ -3,8 +3,8 @@ import { hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import createLogger from 'redux-logger'
-import { reducers } from './reducers/jjapp'
-import { sagas } from './sagas/jjapp'
+import { reducers } from './reducers/index'
+import { sagas } from './sagas/index'
 import React from 'react'
 
 // add the middlewares
