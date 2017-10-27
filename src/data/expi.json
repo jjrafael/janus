@@ -1,0 +1,74 @@
+[
+	{
+		"title": "web developer",
+		"company": "lotus labs inc",
+		"city": "taguig",
+		"country": "philippines",
+		"years": ["dec 2015 - present"],
+		"projects": "14",
+		"lvl-dev": "70",
+		"lvl-des": "25",
+		"lvl-illus": "10",
+		"lvl-others": "15"
+	},
+	{
+		"title": "front-end developer",
+		"company": "tickled media ltd",
+		"city": "makati, singapore, bangkok, mumbai",
+		"country": "philippines",
+		"years": ["apr 2014 - nov 2015"],
+		"projects": "7",
+		"lvl-dev": "55",
+		"lvl-des": "30",
+		"lvl-illus": "10",
+		"lvl-others": "5"
+	},
+	{
+		"title": "creative designer",
+		"company": "devcon philippines",
+		"city": "manila",
+		"country": "philippines",
+		"years": ["jul 2015 - present", "jun 2016 - jul 2016 (creative lead) ", "sep 2015 - nov 2015 (creative lead)"],
+		"projects": "5",
+		"lvl-dev": "15",
+		"lvl-des": "25",
+		"lvl-illus": "45",
+		"lvl-others": "15"
+	},
+	{
+		"title": "lead artist / co-owner",
+		"company": "elfam merks",
+		"city": "pasig",
+		"country": "philippines",
+		"years": ["mar 2015 - dec 2015"],
+		"projects": "7",
+		"lvl-dev": "0",
+		"lvl-des": "0",
+		"lvl-illus": "85",
+		"lvl-others": "15"
+	},
+	{
+		"title": "web developer",
+		"company": "out of the box solutions",
+		"city": "makati",
+		"country": "philippines",
+		"years": ["may 2013 - dec 2013 (fulltime)", "nov 2012 - jan 2013 (part-time)", "aug 2012 - oct 2012 (intern)"],
+		"projects": "14",
+		"lvl-dev": "70",
+		"lvl-des": "25",
+		"lvl-illus": "10",
+		"lvl-others": "15"
+	},
+	{
+		"title": "graphic designer / video editor",
+		"company": "basement8 studio",
+		"city": "cainta",
+		"country": "philippines",
+		"years": ["sep 2012 - nov 2012 (part-time)"],
+		"projects": "1",
+		"lvl-dev": "0",
+		"lvl-des": "5",
+		"lvl-illus": "75",
+		"lvl-others": "20"
+	}
+]

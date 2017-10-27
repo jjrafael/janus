@@ -3,11 +3,9 @@ import { hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import createLogger from 'redux-logger'
-import freeze from 'redux-freeze'
-import { reducers } from './reducers/index'
-import { sagas } from './sagas/index'
+import { reducers } from './reducers/jjapp'
+import { sagas } from './sagas/jjapp'
 import React from 'react'
-import { whyDidYouUpdate } from 'why-did-you-update'
 
 // add the middlewares
 let middlewares = []
@@ -22,12 +20,7 @@ middlewares.push(sagaMiddleware)
 // add the redux logger
 const logger = createLogger({ collapsed: true })
 if (process.env.NODE_ENV !== 'production') {
-  middlewares.push(logger)
-}
-
-// add the freeze dev middleware
-if (process.env.NODE_ENV !== 'production') {
-  // middlewares.push(freeze);
+	middlewares.push(logger)
 }
 
 // apply the middleware
@@ -35,7 +28,7 @@ let middleware = applyMiddleware(...middlewares)
 
 // add the redux dev tools
 if (process.env.NODE_ENV !== 'production' && window.devToolsExtension) {
-  middleware = compose(middleware, window.devToolsExtension())
+	middleware = compose(middleware, window.devToolsExtension())
 }
 
 // create the store

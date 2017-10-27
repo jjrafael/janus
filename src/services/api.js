@@ -19,7 +19,4 @@ const api = new MIFY({
   disableGETCache: true,
 })
 
-// api.logout();
-// api.init();
-
 export default api

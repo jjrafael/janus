@@ -1,9 +1,7 @@
-import actionTypes from '../jjcomponents/jjapp/constants'
+import actionTypes from './constants'
 
-export function login(uname, pw) {
-  return {
-    type: actionTypes.LOGIN,
-    uname,
-    pw,
-  }
+export function getExpi() {
+	return {
+		type: actionTypes.GET_EXPI,
+	}
 }

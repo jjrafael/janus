@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { getExpi } from './actions'
 
 const mapStateToProps = state => {
   return {
     //external props to include on this component
+    expi: state.jjAppReducer.expi,
   }
 }
 
@@ -12,6 +14,7 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       //actions
+      getExpi,
     },
     dispatch
   )
@@ -25,12 +28,14 @@ class JJApp extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     //execute after the component loaded
+    this.props.getExpi()
   }
 
   render() {
-    return <div id="jj-container">WOWOWOWOWOWOWOOWBEH</div>
+    const { expi } = this.props
+    return <div id="jj-container">{expi.map((item, i) => <span>{item.years}</span>)}</div>
   }
 }
 

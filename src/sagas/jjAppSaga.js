@@ -7,26 +7,21 @@ import storageService from '../services/localStorageService'
 const errMsg = 'Something went wrong while connecting to server, please try again later.'
 const USER_KEY = 'USER_DETAILS'
 
-function* login(action) {
+function* getExpi(action) {
 	try {
-		const { response, xhr } = yield call(API.login, action.uname, action.pw)
+		const { response, xhr } = yield call(API.getExpi)
 		if (response) {
-			yield put({
-				type: actionTypes.LOGIN_SUCCEEDED,
-				details: response,
-			})
-			localStorage.setItem('username', action.uname)
-			localStorage.setItem('userid', response.id)
+			yield put({ type: actionTypes.GET_EXPI_SUCCESS, details: response })
 		} else {
 			const parseResponse = JSON.parse(xhr.response)
 			const msg = parseResponse.errors[0].message
-			yield put({ type: actionTypes.LOGIN_FAILED, errMsg: msg })
+			yield put({ type: actionTypes.GET_EXPI_FAILED, errMsg: msg })
 		}
 	} catch (e) {
-		yield put({ type: actionTypes.LOGIN_FAILED, errMsg: errMsg })
+		yield put({ type: actionTypes.GET_EXPI_FAILED, errMsg: errMsg })
 	}
 }
 
 export default function* jjAppSaga() {
-	yield takeLatest(actionTypes.LOGIN, login)
+	//yield takeLatest(actionTypes.GET_EXPI, getExpi)
 }

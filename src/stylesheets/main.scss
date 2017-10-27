@@ -4,15 +4,13 @@
 @import 'colors';
 @import 'animation';
 @import 'mixins';
-@import 'fontsports';
-@import 'phxicons/phxicons';
+@import 'icons/main';
 
 @import 'general';
 @import 'layout';
 @import 'forms';
 @import 'buttons';
 @import 'typography';
-@import 'icons';
 @import 'tabs';
 @import 'tables';
 @import 'menus';
@@ -23,18 +21,6 @@
 @import 'modules/header';
 @import 'modules/footer';
 @import 'modules/modal';
-@import 'modules/sportsTree';
-@import 'modules/pathtree';
-@import 'modules/filterbar';
-@import 'modules/datagrid';
-@import 'modules/datepicker';
-@import 'modules/rvgrid';
-@import 'modules/login';
-@import 'modules/kitTableActionBar';
-@import 'modules/importOpponentDlg';
-@import 'modules/eventCreator';
-@import 'modules/betRestrictions';
-@import 'themes';
 
 //components styles
 @import 'components/lobby';

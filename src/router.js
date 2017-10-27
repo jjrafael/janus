@@ -13,13 +13,8 @@ import ToastContainer from './components/toastr/index'
 const router = (
   <div className="app-phoenix">
     <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
-      <Route path="/login" component={Login} />
-      <Route component={EnsureLoggedInContainer}>
-        <Route path="/" component={Lobby} />
-        <Route path="/combination-risk-manager" component={CombiRiskManager} />
-        <Route path="/jj" component={JJApp} />
-        <Route path="*" component={NotFound} />
-      </Route>
+      <Route path="/" component={JJApp} />
+      <Route path="*" component={NotFound} />
     </Router>
     <ToastContainer />
   </div>
