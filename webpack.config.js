@@ -8,9 +8,7 @@ var webpack = require('webpack')
 
 var envMap = {
   DEV: 'https://mswlar.lotus.local:8443/abp/',
-  MSWDEV: 'https://msw.lotus.local:8443/abp/',
   TEST: 'https://mswlartest.lotus.local:8443/abp/',
-  MSWTEST: 'https://mswtest.lotus.local:8443/abp/',
 }
 
 var env = 'DEV'
